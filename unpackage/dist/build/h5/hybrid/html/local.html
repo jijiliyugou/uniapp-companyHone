@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>网络网页</title>
+    <style type="text/css">
+      .post-message-section {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var userAgent = navigator.userAgent;
+       if (/quickapp/i.test(userAgent)) {
+        // quickapp
+        document.write('<script type="text/javascript" src="https://quickapp/jssdk.webview.min.js"><\/script>');
+      }
+      if (!/toutiaomicroapp/i.test(userAgent)) {
+        document.querySelector('.post-message-section').style.visibility = 'visible';
+      }
+    </script>
+    <!-- uni 的 SDK -->
+    <script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js"></script>
+    <script type="text/javascript">
+      // 待触发 `UniAppJSBridgeReady` 事件后，即可调用 uni 的 API。
+      document.addEventListener('UniAppJSBridgeReady', function() {
+        uni.postMessage({
+            data: {
+                action: 'message'
+            }
+        });
+        uni.getEnv(function(res) {
+            console.log('当前环境：' + JSON.stringify(res));
+        });
+      });
+			// App 调用的方法 
+			document.addEventListener('ocOnLineCollectionFun', function() {
+			  uni.postMessage({
+			      data: {
+			          action: 'message'
+			      }
+			  });
+			  uni.getEnv(function(res) {
+			      console.log('当前环境：' + JSON.stringify(res));
+			  });
+			});
+    </script>
+  </body>
+</html>

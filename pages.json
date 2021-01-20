@@ -1,0 +1,71 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/spotArea/spotArea",
+			"style": {
+				"navigationBarTitleText": "现货区",
+				"navigationBarTextStyle": "white",
+				"navigationBarBackgroundColor": "#0055ff",
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
+			}
+		},{
+        "path" : "pages/newProductArea/newProductArea",
+        "style": {
+        	"navigationBarTitleText": "新品区",
+        	"navigationBarTextStyle": "white",
+        	"navigationBarBackgroundColor": "#0055ff",
+        	"navigationStyle":"custom",
+        	"app-plus":{
+        	"titleView":false
+        	}
+        }
+    },{
+        "path" : "pages/VIPArea/VIPArea",
+        "style": {
+        	"navigationBarTitleText": "VIP区",
+        	"navigationBarTextStyle": "white",
+        	"navigationBarBackgroundColor": "#0055ff",
+        	"navigationStyle":"custom",
+        	"app-plus":{
+        	"titleView":false
+        	}
+        }
+      }
+        ,{
+            "path" : "pages/myCartList/myCartList",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "购物车",
+                "navigationStyle":"custom",
+                "app-plus":{
+                "titleView":false
+                }
+            }
+            
+        }
+        ,{
+            "path" : "pages/regionComponent/regionComponent",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "中国区",
+                "navigationStyle":"custom",
+                "app-plus":{
+                "titleView":false
+                }
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "小竹熊 云科技",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	}
+}
